@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css animations</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: #f7f7f7;
+    }
+    
+    #circle {
+        width: 100px;
+        height: 100px;
+        border: 3px solid #1d7393;
+        border-radius: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #circle::before,
+    #circle:after {
+        content: '';
+        position: absolute;
+        border: 3px solid transparent;
+        border-left-color: #2eb92e;
+        border-right-color: #2eb92e;
+        border-radius: 100%;
+        animation: animate 2s infinite linear;
+    }
+    
+    #circle::before {
+        left: 15px;
+        top: 15px;
+        bottom: 15px;
+        right: 15px;
+        animation-direction: reverse;
+    }
+    
+    #circle::after {
+        left: -15px;
+        top: -15px;
+        bottom: -15px;
+        right: -15px;
+    }
+    
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    /* we created this animation using only one div. */
+</style>
+
+<body>
+    <div id="circle"></div>
+</body>
+
+
+
+
+
+
+
+
+
+</html>
